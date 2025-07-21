@@ -1,1 +1,94 @@
 # mcq-test
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generative AI MCQ Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .question { margin-bottom: 20px; }
+        .hidden { display: none; }
+        .score { font-size: 1.5rem; font-weight: bold; margin-top: 20px; }
+        button { padding: 10px 20px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+<h1>Generative AI MCQ Test</h1>
+
+<div id="test1" class="test-section">
+    <h2>Test 1 (Questions 1-30)</h2>
+    <form id="form1">
+        <!-- Example of 3 questions (you can continue similarly up to 30) -->
+        <div class="question">
+            <p>1. What does Generative AI primarily do?</p>
+            <input type="radio" name="q1" value="0">A) Store large data<br>
+            <input type="radio" name="q1" value="1">B) Generate new content<br>
+            <input type="radio" name="q1" value="0">C) Repair broken code<br>
+            <input type="radio" name="q1" value="0">D) Interpret emotions<br>
+        </div>
+        <div class="question">
+            <p>2. Which is a popular example of Generative AI?</p>
+            <input type="radio" name="q2" value="0">A) Excel<br>
+            <input type="radio" name="q2" value="1">B) ChatGPT<br>
+            <input type="radio" name="q2" value="0">C) Google Calendar<br>
+            <input type="radio" name="q2" value="0">D) Spotify<br>
+        </div>
+        <div class="question">
+            <p>3. Which company developed ChatGPT?</p>
+            <input type="radio" name="q3" value="0">A) Google<br>
+            <input type="radio" name="q3" value="0">B) Amazon<br>
+            <input type="radio" name="q3" value="1">C) OpenAI<br>
+            <input type="radio" name="q3" value="0">D) Facebook<br>
+        </div>
+        <!-- Add up to 30 questions here following the same pattern -->
+        <button type="button" onclick="submitTest('form1', 'score1')">Submit Test 1</button>
+    </form>
+    <div id="score1" class="score hidden"></div>
+</div>
+
+<div id="test2" class="test-section">
+    <h2>Test 2 (Questions 31-60)</h2>
+    <form id="form2">
+        <div class="question">
+            <p>31. LLM stands for?</p>
+            <input type="radio" name="q31" value="0">A) Limited Learning Machine<br>
+            <input type="radio" name="q31" value="0">B) Legal Learning Model<br>
+            <input type="radio" name="q31" value="1">C) Large Language Model<br>
+            <input type="radio" name="q31" value="0">D) Logical Language Model<br>
+        </div>
+        <div class="question">
+            <p>32. What is a major limitation of LLMs?</p>
+            <input type="radio" name="q32" value="0">A) Always accurate<br>
+            <input type="radio" name="q32" value="1">B) Hallucination<br>
+            <input type="radio" name="q32" value="0">C) Zero computing power<br>
+            <input type="radio" name="q32" value="0">D) Total memorization<br>
+        </div>
+        <div class="question">
+            <p>33. LLMs mainly work with?</p>
+            <input type="radio" name="q33" value="1">A) Unstructured text data<br>
+            <input type="radio" name="q33" value="0">B) Numerical tabular data<br>
+            <input type="radio" name="q33" value="0">C) Video-only data<br>
+            <input type="radio" name="q33" value="0">D) Physical sensor data<br>
+        </div>
+        <!-- Continue up to question 60 following same structure -->
+        <button type="button" onclick="submitTest('form2', 'score2')">Submit Test 2</button>
+    </form>
+    <div id="score2" class="score hidden"></div>
+</div>
+
+<script>
+function submitTest(formId, scoreId) {
+    const form = document.getElementById(formId);
+    const formData = new FormData(form);
+    let score = 0;
+
+    for (let [name, value] of formData.entries()) {
+        score += parseInt(value);
+    }
+
+    document.getElementById(scoreId).innerHTML = "Your score is: " + score + "/30";
+    document.getElementById(scoreId).classList.remove('hidden');
+}
+</script>
+
+</body>
+</html>
